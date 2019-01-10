@@ -100,6 +100,10 @@ if (!["507408804145528832"].includes(message.author.id)) {
 
 bot.on('message', async message => {
  if (message.content.startsWith("<@!508122813299818511>")) {
+	 var prefix = '>>';
+let fetched = await db.fetch(`prefix_${message.guild.id}`);
+if (fetched === null) prefix = '>>';
+else prefix = fetched;
 message.delete()
 let non = new Discord.RichEmbed()
 .setTitle("You have awoken me.. <a:ping:525918768183115797>")

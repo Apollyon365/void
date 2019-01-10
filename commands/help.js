@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const db = require('quick.db')
 
 module.exports.run = async (bot, message, args, ops) => {
   message.delete()
@@ -59,7 +59,7 @@ else prefix = fetched;
  .setDescription("View the Commands [here](https://sites.google.com/view/voidbot/commmands)\n The Prefix for ${message.guild.name} is ${fetched || prefix}`")
   .setColor(0x36393f)
 message.author.send(help)
-  
+}
   module.exports.help = {
     name: "help"
     }

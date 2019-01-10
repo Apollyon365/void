@@ -48,9 +48,9 @@ message.channel.send(prehelp)
   let volume = "`>>volume` `<1-200>` (Changes the volume from 1-200)"
   let search = "`>>search` `<search>` (Searches what you want in youtube for Abyss to play)"
   
-  var prefix = '/';
+  var prefix = '>>';
 let fetched = await db.fetch(`prefix_${message.guild.id}`);
-if (fetched === null) prefix = '**/**';
+if (fetched === null) prefix = '>>';
 else prefix = fetched;
   let p = `${fetched || prefix}`
   

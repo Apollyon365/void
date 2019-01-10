@@ -49,66 +49,11 @@ message.author.send(prehelp)
   let search = "`>>search` `<search>` (Searches what you want in youtube for Abyss to play)"
   
   let help = new Discord.RichEmbed()
-  .setTitle("General Commands")
- .setDescription(help1 + "\n" + ping + "\n" + remind + "\n" + settings + "\n" + stats + "\n" + calc + "\n" + profile + "\n" + vote)
-  .setFooter("\"<>\" is required while \"[]\" is optional.")
+  .setTitle("Help Menu")
+ .setDescription("View the commands [here](https://sites.google.com/view/voidbot/commmands)
   .setColor(0x36393f)
 message.author.send(help)
   
-   let help2 = new Discord.RichEmbed()
-  .setTitle("Moderaton Commands")
- .setDescription(ban + "\n" + clear + "\n" + invis + "\n" + kick + "\n" + mute + "\n" + unmute)
-  .setFooter("\"<>\" is required while \"[]\" is optional.")
-  .setColor(0x36393f)
-message.author.send(help2)
-  
-  let help3 = new Discord.RichEmbed()
-  .setTitle("Fun Commands")
-  .setDescription(eightball + "\n" + dice + "\n" + flip + "\n" + rps + "\n" + hack + "\n" + asktrump + "\n" + kiss + "\n" + hugs + "\n" + slap)
-  .setFooter("\"<>\" is required while \"[]\" is optional.")
-  .setColor(0x36393f)
-  message.author.send(help3)
-  
-  let help4 = new Discord.RichEmbed()
-  .setTitle("Searching Commands")
-  .setDescription(google + "\n" + youtube)
-  .setColor(0x36393f)
-  .setFooter("\"<>\" is required while \"[]\" is optional.")
-  message.author.send(help4)
-  
-  let help5 = new Discord.RichEmbed()
-  .setTitle("Music Commands")
-  .setDescription(play + "\n" + stop + "\n" + pause + "\n" + resume + "\n" + volume + "\n" + search)
-  .setColor(0x36393f)
-  .setFooter("\"<>\" is required while \"[]\" is optional.")
-  message.author.send(help5)
-  
- let helpsent = new Discord.RichEmbed()
-  .setTitle("Sent you the Commands! ✅")
-  .setDescription("Check your dms! If you didn't get one check if your dms is public!")
-  .setFooter("This message will delete in 5 seconds")
-  .setColor(0x36393f)
-  message.channel.send(helpsent).then(msg => {msg.delete(5000)});
-  
-    //Developer Commands Page 1
-      let reboot = "`>>reboot` (Reboots the bot)"
-      let reload = "`>>reload` <command> (Reloads a command)"
-      let statsserver = "`>>stats server(s)` (Shows a list of all the servers the bot is in along with its ID)"
-      let evals =  "`>>eval` <code> (Pretty Much a calculator. Along with some other basic JS codes)"
-      let botleave = "`>>botleave` <guild-id> [reason] (Bot leaves the guild)"
-
-
-   let devs = new Discord.RichEmbed()
-  .setDescription("Dev Commands:")
-  .setTitle("Secret Help Command (1/1)")
-   .addField("Dev Commands", reboot + "\n" + reload + "\n" + statsserver + "\n" + evals + "\n" + botleave) 
-  .setColor(0x36393f)
-  
-    if(args[0] == "dev" && !["507408804145528832"]) message.author.send(devs)
-  if(args[0] == "devs" && !["507408804145528832"]) message.author.send(devs)
-  
-  }
-
   module.exports.help = {
     name: "help"
     }

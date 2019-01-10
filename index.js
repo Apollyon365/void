@@ -108,6 +108,7 @@ message.delete()
 let non = new Discord.RichEmbed()
 .setTitle("You have awoken me.. <a:ping:525918768183115797>")
 .setDescription(`The Prefix for ${message.guild.name} is ${fetched || prefix}`)
+.setColor(grey)
 message.channel.send(non)
  }
 })

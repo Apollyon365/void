@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
  let prehelp = new Discord.RichEmbed()
   .setTitle("Void Help Commands!")
-  .setDescription("Don\'t worry! Help is on the way! \n🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)\n 🔺 [Vote for Void](https://discordbots.org/bot/508122813299818511/vote) \n 💰 [Donate for Void+](https://donatebot.io/checkout/515737847957946388)")
+  .setDescription("Don\'t worry! Help is on the way! \n🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)\n 🔺 [Vote for Void](https://discordbots.org/bot/508122813299818511/vote) \n <:discordbotlist:338808864352763904> [DBL Website](https://discordbots.org/bot/508122813299818511)\n <a:kawaiifast:525854926858092555> [Void's Website](")
   .setColor(0x36393f)
 message.channel.send(prehelp)
   //General

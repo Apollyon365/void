@@ -50,7 +50,7 @@ message.author.send(prehelp)
   
   let help = new Discord.RichEmbed()
   .setTitle("Help Menu")
- .setDescription("View the commands [here](https://sites.google.com/view/voidbot/commmands)
+ .setDescription("View the commands [here](https://sites.google.com/view/voidbot/commmands)")
   .setColor(0x36393f)
 message.author.send(help)
   

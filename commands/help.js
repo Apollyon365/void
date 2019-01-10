@@ -48,9 +48,15 @@ message.author.send(prehelp)
   let volume = "`>>volume` `<1-200>` (Changes the volume from 1-200)"
   let search = "`>>search` `<search>` (Searches what you want in youtube for Abyss to play)"
   
+  var prefix = '/';
+let fetched = await db.fetch(`prefix_${message.guild.id}`);
+if (fetched === null) prefix = '**/**';
+else prefix = fetched;
+  let p = `${fetched || prefix}`
+  
   let help = new Discord.RichEmbed()
   .setTitle("Help Menu")
- .setDescription("View the commands [here](https://sites.google.com/view/voidbot/commmands)")
+ .setDescription("View the Commands [here](https://sites.google.com/view/voidbot/commmands)\n The Prefix for ${message.guild.name} is ${fetched || prefix}`")
   .setColor(0x36393f)
 message.author.send(help)
   

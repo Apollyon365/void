@@ -99,48 +99,15 @@ if (!["507408804145528832"].includes(message.author.id)) {
 
 
 bot.on('message', async message => {
- if (message.content.startsWith(">>toggle bwords")) {
+ if (message.content.startsWith("<@!508122813299818511>")) {
 message.delete()
-    if(enabled === true) {
-        enabled = false
-      let on = new Discord.RichEmbed()
-.setDescription("Blacklisted Words has been **DISABLED** :negative_squared_cross_mark:")
-      .setColor(0x36393f)
-      message.channel.send(on)
-    }else{
-  message.delete()
-      enabled = true
-            let off = new Discord.RichEmbed()
-.setDescription("Blacklisted Words has been **ENABLED** :white_check_mark:")
-      .setColor(0x36393f)
-      message.channel.send(off)
-    }
-  }
-  
-  //1 blacklisted words
-  let blacklisted = ['fuck','bullshit','bitch','asshole','cunt','virgin','damn','fucker','fucked','raped','rape','ass','stfu','wtf','tf','fck','fk','bs','shit','omfg','tit','cum','dick','vagina'] //words
-
-  //2 looking for words
-  let foundInText = false;
-  for (var i in blacklisted) { // loops through the blacklisted list
-    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-  }
- 
-  //3 deletes and send message
-    if (foundInText) {
-      if (["507408804145528832"].includes(message.author.id)) return
-      if(enabled) {
-       let reply = new Discord.RichEmbed()
-      .setColor(0x36393f)
-     .setDescription(`${message.author} watch your language :rage:`)
-      message.channel.send(reply).then(msg => msg.delete(5000));
-      message.delete()
-    }else{
-      foundInText = false
-      return;
-    }
-}
+let non = new Discord.RichEmbed()
+.setTitle("You have awoken me.. <a:ping:525918768183115797>")
+.setDescription(`The Prefix for ${message.guild.name} is ${fetched || prefix}`)
+message.channel.send(non)
+ }
 })
+
   
 //Statuses
 bot.on('ready', () => { 

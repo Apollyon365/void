@@ -3,12 +3,6 @@ const db = require('quick.db')
 
 module.exports.run = async (bot, message, args, ops) => {
   message.delete()
-
- let prehelp = new Discord.RichEmbed()
-  .setTitle("Void Help Commands!")
-  .setDescription("Don\'t worry! Help is on the way! \n🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)\n 🔺 [Vote for Void](https://discordbots.org/bot/508122813299818511/vote) \n <a:discordblob:532794373104992273> [DBL Website](https://discordbots.org/bot/508122813299818511)\n <a:rainbowdiscord:532794337931821056> [Void's Website](https://sites.google.com/view/voidbot/home?authuser=0)")
-  .setColor(0x36393f)
-message.channel.send(prehelp)
   //General
   let help1 = "`>>help` (Shows you all of the commands)"
   let ping = "`>>ping` (Shows how fast the bot responds in ms)"
@@ -57,6 +51,7 @@ else prefix = fetched;
   let help = new Discord.RichEmbed()
   .setTitle("Help Menu")
  .setDescription(`View the Commands [here](https://sites.google.com/view/voidbot/commands)\n The Prefix for ${message.guild.name} is ${fetched || prefix}`)
+  .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n❔ [Support Server](https://discord.gg/7xuEzbt)\n🔺 [Vote for Void](https://discordbots.org/bot/508122813299818511/vote)\n<a:discordblob:532794373104992273> [DBL Website](https://discordbots.org/bot/508122813299818511)\n<a:rainbowdiscord:532794337931821056> [Void's Website](https://sites.google.com/view/voidbot/home?authuser=0)")
   .setColor(0x36393f)
 message.channel.send(help)
 }

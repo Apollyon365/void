@@ -3,7 +3,7 @@ const DBL = require('dblapi.js')
 module.exports.run = async (bot, message, args, ops) => {
 message.delete()
   let novote = Discord.RichEmbed()
-  .setDescription("Sorry you must vote for Void before using the command, this is for Performance Issues\nClick [here](https://discordbots.org/bot/508122813299818511/vote) to vote for Void! Thank you!")
+  .setDescription("Sorry you must vote for Void before using this command, this is for Performance Issues\nClick [here](https://discordbots.org/bot/508122813299818511/vote) to vote for Void! Thank you!")
   .setColor(0x36393f)
   .setFooter("P.S if you have voted for Void please wait a few minutes before trying again")
  let user = message.author

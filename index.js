@@ -144,9 +144,10 @@ let welcome = new Discord.RichEmbed()
     .setTitle("😄 Thank you for inviting me to your server! 😄")
   .setDescription("I was made by Apollyon365#3607")
     .setColor(0x36393f)
-    .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)");
-    .addField("Prefix", "<:vmore:517907860861222923> Prefix for this bot is ``>>``\nIf you wish to change it please do >>setprefix <prefix>\nIf you forget your prefix mention the bot\nType ``>>help`` for the commands!")
-    guild.channels.filter(c => c.type === 'text').first().send(welcome);
+    .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)")
+    .addField("Prefix", "<:vmore:517907860861222923> Prefix for this bot is ``>>``\nIf you wish to change it please do >>setprefix <prefix>\nIf you forget your prefix mention the bot")
+    .addField("Help Commands", "Type ``>>help`` for the commands!")
+	guild.channels.filter(c => c.type === 'text').first().send(welcome);
 });
 
 

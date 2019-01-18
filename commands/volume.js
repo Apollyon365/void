@@ -2,12 +2,6 @@ const Discord = require('discord.js')
 module.exports.run = async (bot, message, args, ops) => {
 message.delete()
  let user = message.author
-const voted = await dbl.hasVoted(user.id);
-  if (voted) {
-    console.log('voted yo') 
-  } else {
-    message.channel.send(novote)
-  }
   let fetched = ops.active.get(message.guild.id);
 let error = new Discord.RichEmbed()
     .setColor(0x36393f)

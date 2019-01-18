@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args, ops) => {
   else {
 
       let queueembed = new Discord.RichEmbed()
-      .addField(`Added to the Queue", `${info.title} to the Queue`)
+      .addField(`Added to the Queue`, `${info.title} to the Queue`)
       .addField(`Link`, `Click [here](https://youtu.be/${data.queue[0].url})`)
       .setFooter(`Requested by: ${message.author.username}`)
       .setColor(0x36393f)

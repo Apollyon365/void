@@ -118,7 +118,7 @@ message.channel.send(non)
 bot.on('ready', () => { 
   console.log(`${bot.user.username} is watching ${bot.guilds.size} Discord Servers and ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users!`);
 	let Activities = [
-    `${bot.guilds.size} Servers | >>help`
+    `${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users | >>help`
                   
 	];
 	setInterval(function() {

@@ -141,12 +141,12 @@ bot.once('ready', function() {
 //Guild Invite Join
 bot.on('guildCreate', guild => {
 let welcome = new Discord.RichEmbed()
-    welcome.setTitle("😄 Thank you for inviting me to your server! 😄")
-  welcome.setDescription("I was made by Apollyon365#3607")
-    welcome.setColor(0x36393f)
-    welcome.addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)");
-    welcome.addField("Prefix", "<:vmore:517907860861222923> Prefix for this bot is ``>>``\nIf you wish to change it please do >>setprefix <prefix>\nIf you forget your prefix mention the bot")
-  welcome.addField("Help", "Type ``>>help`` for the commands!")
+    .setTitle("😄 Thank you for inviting me to your server! 😄")
+  .setDescription("I was made by Apollyon365#3607")
+    .setColor(0x36393f)
+    .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)");
+    .addField("Prefix", "<:vmore:517907860861222923> Prefix for this bot is ``>>``\nIf you wish to change it please do >>setprefix <prefix>\nIf you forget your prefix mention the bot")
+  .addField("Help", "Type ``>>help`` for the commands!")
     guild.channels.filter(c => c.type === 'text').first().send(welcome);
 });
 

@@ -3,7 +3,7 @@ const DBL = require('dblapi.js');
 let Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args, ops) => {
-  message.delete()
+ /* message.delete()
   const dbltoken = process.env.DBL
   const dbl = new DBL(dbltoken, { webhookPort: 5000, webhookAuth: 'password' });
   
@@ -27,7 +27,7 @@ const voted = await dbl.hasVoted(user.id);
   .setDescription("Want to suport Void?\nPlease Vote by clicking [here](https://discordbots.org/bot/508122813299818511/vote)")
   .setFooter(`Heres a cookie :cookie:`)
   message.channel.send(idk)*/
-  
+ */ 
 }
 module.exports.help = {
   name: "vote"

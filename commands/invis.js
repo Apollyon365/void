@@ -32,13 +32,12 @@ module.exports.run = async (bot, message, args, ops) => {
   
   let messages = args.join(" ")
   if (!messages) return message.channel.send(needtext)
-        const embed = new Discord.RichEmbed();
-        embed.setColor(0x36393f)
-      
-         embed.setDescription(messages);
+        const embed = new Discord.RichEmbed()
+        .setColor(0x36393f)
+        .setDescription(messages);
         
     
-     message.channel.send(embed);
+     message.channel.send(messages);
 
 
 

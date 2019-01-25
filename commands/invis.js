@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args, ops) => {
   
   
   let messages = args.join(" ")
-  let messages2 = args.split(1).join(" ")
+  let messages2 = args.slice(1).join(" ")
    if(args[0] == "noembed") {
        message.channel.send(messages2)
        return;

@@ -31,13 +31,17 @@ module.exports.run = async (bot, message, args, ops) => {
   
   
   let messages = args.join(" ")
+   if(args[0] == "noembed") {
+       message.channel.send(messages)
+       return;
+   }
   if (!messages) return message.channel.send(needtext)
         const embed = new Discord.RichEmbed()
         .setColor(0x36393f)
         .setDescription(messages);
         
     
-     message.channel.send(messages);
+     message.channel.send(embed);
 
 
 

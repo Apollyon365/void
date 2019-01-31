@@ -33,16 +33,16 @@ module.exports.run = async (bot, message, args) => {
    else if (["507408804145528832"].includes(message.author.id))  {
     console.log('yay apolly')
 } else {
-    return message.channel.send(noperm)
+    return message.channel.send("🚫 You do not have permission for this. ``MANAGE_MESSAGES``")
 }
 
   const amount = parseInt(args[0]) + 1;
 
 		if (isNaN(amount)) {
-			return message.channel.send(notvalidnumber)
+			return message.channel.send("🚫 Please input a valid number")
 		}
 		else if (amount <= 1 || amount > 101) {
-      return message.channel.send(number)
+      return message.channel.send("🚫 You need to input a number between 1 and 99.)
       
     }
     
@@ -52,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
 
 		message.channel.bulkDelete(amount, true).catch(err => {
 			console.error(err);
-			message.channel.send(err)
+			message.channel.send("🚫 There was an error trying to clear the messages in this channel!")
 		});
 
 

@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args, ops) => {
   let novoice = new Discord.RichEmbed();
     novoice.setColor(0x36393f)
     novoice.setDescription('🚫 You must connect in a voice channel.');
-  if (!message.member.voiceChannel) return message.channel.send(novoice)
+  if (!message.member.voiceChannel) return message.channel.send('🚫 You must connect in a voice channel.')
   let novodice = new Discord.RichEmbed();
     novodice.setColor(0x36393f)
     novodice.setDescription('🚫 I need a valid URL.');

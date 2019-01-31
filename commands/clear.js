@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
 			return message.channel.send("🚫 Please input a valid number")
 		}
 		else if (amount <= 1 || amount > 101) {
-      return message.channel.send("🚫 You need to input a number between 1 and 99.)
+      return message.channel.send("🚫 You need to input a number between 1 and 99.")
       
     }
     

@@ -37,7 +37,7 @@ fs.readdir("./commands/", (err, files) => {
 jsfile.forEach((f, i) =>{
   delete require.cache[require.resolve(`./commands/${f}`)];
   let props = require(`./commands/${f}`);
-  console.log(`${f} has loaded!`);
+  console.log(`${f} has sucessfully loaded!`);
   bot.commands.set(props.help.name, props);
 });
 
@@ -49,7 +49,7 @@ bot.on("message", async message => {
   let content = message.content.split(" ");
   let command = content[0];
   let args = content.slice(1);
-var prefix = '..=';
+var prefix = '.';
 let fetched = await db.fetch(`prefix_${message.guild.id}`);
 if (fetched === null) prefix = '.';
 else prefix = fetched;
@@ -100,13 +100,13 @@ if (!["507408804145528832"].includes(message.author.id)) {
 
 bot.on('message', async message => {
  if (message.content.startsWith("<@!508122813299818511>")) {
-	 var prefix = '>>';
+	 var prefix = '.';
 let fetched = await db.fetch(`prefix_${message.guild.id}`);
-if (fetched === null) prefix = '>>';
+if (fetched === null) prefix = '.';
 else prefix = fetched;
 message.delete()
 let non = new Discord.RichEmbed()
-.setTitle("You have awoken me.. <a:ping:525918768183115797>")
+.setTitle("INFO:")
 .setDescription(`The Prefix for ${message.guild.name} is ${fetched || prefix}`)
 .setColor(grey)
 message.channel.send(non)
@@ -118,12 +118,12 @@ message.channel.send(non)
 bot.on('ready', () => { 
   console.log(`${bot.user.username} is watching ${bot.guilds.size} Discord Servers and ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users!`);
 	let Activities = [
-    `${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users | >>help`
+    `music to ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users | .help`
                   
 	];
 	setInterval(function() {
 		let activity = Activities[Math.floor(Math.random() * Activities.length)];
-		bot.user.setActivity(activity, { type: 'WATCHING' }); //
+		bot.user.setActivity(activity, { type: 'PLAYING' }); //
   }, 10000);
 });
 
@@ -145,8 +145,8 @@ let welcome = new Discord.RichEmbed()
   .setDescription("I was made by Apollyon365#3607")
     .setColor(0x36393f)
     .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n ❔ [Support Server](https://discord.gg/7xuEzbt)")
-    .addField("Prefix", "<:vmore:517907860861222923> Prefix for this bot is ``>>``\nIf you wish to change it please do >>setprefix <prefix>\nIf you forget your prefix mention the bot")
-    .addField("Help Commands", "Type ``>>help`` for the commands!")
+    .addField("Prefix", "<:vmore:517907860861222923> Prefix for this bot is ``.``\nIf you wish to change it please do >>setprefix <prefix>\nIf you forget your prefix mention the bot")
+    .addField("Help Commands", "Type ``.help`` for the commands!")
 	guild.channels.filter(c => c.type === 'text').first().send(welcome);
 });
 

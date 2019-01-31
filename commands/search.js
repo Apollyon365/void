@@ -5,12 +5,12 @@ module.exports.run = async (bot, message, args, ops) => {
   message.delete()
 let error = new Discord.RichEmbed()
     .setColor(0x36393f)
-    .setDescription('Something went wrong.');
+    .setDescription('🚫 Something went wrong.');
  
   
 
     search(args.join(' '), function(err, res) {
-      if (err) return message.channel.send(error).then(msg => msg.delete(5000));
+      if (err) return message.channel.send('🚫 Something went wrong.').then(msg => msg.delete(5000));
 
       let videos = res.videos.slice(0, 5);
 
@@ -19,12 +19,12 @@ let error = new Discord.RichEmbed()
         resp += `**${parseInt(i)+1}** - ${videos[i].title}\n`;
       }
 
-      resp += `\n**Choose the number between 1-${videos.length}**`;
+      resp += `\n**Choose a number between 1-${videos.length}**`;
 let search = new Discord.RichEmbed()
 .setTitle(`Results for ${args.join(' ')}`)
     .setColor(0x36393f)
     .setDescription(resp);
-     message.channel.send(search);
+     message.channel.send(resp);
       
      /* const filterz = m => m.content.startsWith('b!play');
       

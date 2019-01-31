@@ -49,9 +49,9 @@ bot.on("message", async message => {
   let content = message.content.split(" ");
   let command = content[0];
   let args = content.slice(1);
-var prefix = '>>';
+var prefix = '..=';
 let fetched = await db.fetch(`prefix_${message.guild.id}`);
-if (fetched === null) prefix = '>>';
+if (fetched === null) prefix = '.';
 else prefix = fetched;
   if(!message.content.startsWith(prefix)) return;
 

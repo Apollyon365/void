@@ -5,11 +5,11 @@ module.exports.run = async (bot, message, args, ops) => {
   message.delete()
   let novoice = new Discord.RichEmbed();
     novoice.setColor(0x36393f)
-    novoice.setDescription('Connect to a voice channel.');
+    novoice.setDescription('🚫 You must connect in a voice channel.');
   if (!message.member.voiceChannel) return message.channel.send(novoice)
   let novodice = new Discord.RichEmbed();
     novodice.setColor(0x36393f)
-    novodice.setDescription('I need a valid url.');
+    novodice.setDescription('🚫 I need a valid URL.');
   if (!args[0]) return message.channel.send(novodice)
 
   let validate = await ytdl.validateURL(args[0]);
@@ -37,13 +37,10 @@ module.exports.run = async (bot, message, args, ops) => {
   if (!data.dispatcher) play(bot, ops, data);
   else {
 
-      let queueembed = new Discord.RichEmbed()
-      .addField(`Added to the Queue`, `${info.title} to the Queue`)
-      .addField(`Link`, `Click [here](https://youtu.be/${data.queue[0].url})`)
-      .setFooter(`Requested by: ${message.author.username}`)
-      .setColor(0x36393f)
+     /* let queueembed = new Discord.RichEmbed()
+      .setTitle(`🎶 Added [**${info.title}**](https://youtu.be/${data.queue[0].url}) to the Queue 🎧`)*/
 
-      message.channel.send(queueembed)
+      message.channel.send(`🎶 Added **${info.title}** to the Queue 🎧`)
 
   }
 
@@ -53,14 +50,11 @@ module.exports.run = async (bot, message, args, ops) => {
 }
 
 async function play(bot, ops, data) {
-   let playingembed = new Discord.RichEmbed()
-   .addField(`Now Playing`, `${data.queue[0].songTitle}`)
-   .addField(`Link`, `Click [here](https://youtu.be/${data.queue[0].url})`)
-   .setFooter(`Requested by: ${data.queue[0].requester}`)
-   .setColor(0x36393f)
+  /* let playingembed = new Discord.RichEmbed()
+   .setDescription(`🎶 Now playing [**${data.queue[0].songTitle}**](https://youtu.be/${data.queue[0].url}) 🎧`)
+   .setColor(0x36393f)*/
 
-   bot.channels.get(data.queue[0].announceChannel).send(playingembed)
-
+   bot.channels.get(data.queue[0].announceChannel).send(`🎶 Now playing **${data.queue[0].songTitle}** 🎧`)
    data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, { filter: 'audioonly' }));
    data.dispatcher.guildID = data.guildID;
 

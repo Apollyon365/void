@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops) => {
   let novodice = new Discord.RichEmbed();
     novodice.setColor(0x36393f)
     novodice.setDescription('🚫 I need a valid URL.');
-  if (!args[0]) return message.channel.send(novodice)
+  if (!args[0]) return message.channel.send('🚫 I need a valid URL.')
 
   let validate = await ytdl.validateURL(args[0]);
 

@@ -27,22 +27,20 @@ module.exports.run = async (bot, message, args, ops) => {
 
       let needtext = new Discord.RichEmbed();
     needtext.setColor(0x36393f)
-    needtext.setDescription("You need to supply a text.");
+    needtext.setDescription("🚫 You need to supply a text.");
   
   
   let messages = args.join(" ")
   let messages2 = args.slice(1).join(" ")
-   if(args[0] == "noembed") {
-       message.channel.send(messages2)
+   if(args[0] == "embed") {
+        if (!messages) return message.channel.send("🚫 You need to supply a text.")
+       message.channel.send(messages)
        return;
    }
-  if (!messages) return message.channel.send(needtext)
-        const embed = new Discord.RichEmbed()
-        .setColor(0x36393f)
-        .setDescription(messages);
+  if (!messages2) return message.channel.send("🚫 You need to supply a text.")
         
     
-     message.channel.send(embed);
+     message.channel.send(messages2);
 
 
 

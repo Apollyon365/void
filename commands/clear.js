@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   //----------------------
   let number = new Discord.RichEmbed();
   number.setColor(0x36393f)
-  number.setDescription("'You need to input a number between 1 and 99.'");
+  number.setDescription("🚫 You need to input a number between 1 and 99.");
   //----------------------
   let noperm = new Discord.RichEmbed();
   noperm.setColor(0x36393f)
@@ -13,15 +13,15 @@ module.exports.run = async (bot, message, args) => {
   //----------------------
   let notvalidnumber = new Discord.RichEmbed();
   notvalidnumber.setColor(0x36393f)
-  notvalidnumber.setDescription("Please input a valid number");
+  notvalidnumber.setDescription("🚫 Please input a valid number");
   //----------------------
   let err = new Discord.RichEmbed();
   err.setColor(0x36393f)
-  err.setDescription("There was an error trying to clear the messages in this channel!");
+  err.setDescription("🚫 There was an error trying to clear the messages in this channel!");
   //----------------------
   let cleared = new Discord.RichEmbed();
   cleared.setColor(0x36393f)
-  cleared.setDescription(`Successfully Cleared **${args[0]}** messages.`);
+  cleared.setDescription(`✅ Successfully Cleared **${args[0]}** messages.`);
   //----------------------
         let dev = new Discord.RichEmbed();
     dev.setColor(0x36393f)
@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
       //nothing here
     }
    else if (["507408804145528832"].includes(message.author.id))  {
-    console.log('dev')
+    console.log('yay apolly')
 } else {
     return message.channel.send(noperm)
 }
@@ -47,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
     }
     
     message.channel.bulkDelete(args[0]).then(() => {
-      message.channel.send(cleared).then(msg => {msg.delete(5000)});
+      message.channel.send(`✅ Successfully Cleared **${args[0]}** messages.`).then(msg => {msg.delete(5000)});
     });
 
 		message.channel.bulkDelete(amount, true).catch(err => {

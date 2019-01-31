@@ -6,19 +6,19 @@ module.exports.run = async (bot, message, args, ops) => {
  //----------------------
     let novoice = new Discord.RichEmbed();
     novoice.setColor(0x36393f)
-    novoice.setDescription('Connect to a voice channel.');
+    novoice.setDescription('🚫 You must connect in a voice channel.');
     //----------------------
     let notconnect = new Discord.RichEmbed();
     notconnect.setColor(0x36393f)
-    notconnect.setDescription("I am currently not connected to the voice channel.");
+    notconnect.setDescription("🚫 There must be music playing to use that!");
     //----------------------
     let nosame = new Discord.RichEmbed();
     nosame.setColor(0x36393f)
-    nosame.setDescription("We're not in the same voice channel");
+    nosame.setDescription("🚫 We're not in the same voice channel");
     //----------------------
     let stopped = new Discord.RichEmbed();
     stopped.setColor(0x36393f)
-    stopped.setDescription("Music has been stopped, and I have cleared the queue")
+    stopped.setDescription("🎶 The music has been stopped and the queue has been cleared.")
     .setFooter("I have also left the voice channel")
 /*  message.member.guild.createRole({
        name: Music,
@@ -29,11 +29,11 @@ module.exports.run = async (bot, message, args, ops) => {
       message.member.addRole(role)
   }); */
 
-  if (!message.member.voiceChannel) return message.channel.send(novoice)
+  if (!message.member.voiceChannel) return message.channel.send('🚫 You must connect in a voice channel.')
 
-  if (!message.guild.me.voiceChannel) return message.channel.send(notconnect)
+  if (!message.guild.me.voiceChannel) return message.channel.send("🚫 There must be music playing to use that!")
 
-  if (message.guild.me.voiceChannelID !== message.member.voiceChannelID) return message.channel.send(nosame)
+  if (message.guild.me.voiceChannelID !== message.member.voiceChannelID) return message.channel.send("🚫 We're not in the same voice channel")
 
   message.guild.me.voiceChannel.leave();
 
@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args, ops) => {
   
 
 
- message.channel.send(stopped)
+ message.channel.send("🎶 The music has been stopped and the queue has been cleared. 🎧")
 
 }
 

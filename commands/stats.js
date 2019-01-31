@@ -18,7 +18,7 @@ let ram = process.memoryUsage().heapUsed / 1024 / 1024;
       .setDescription("⚙ General Stats\n ```diff\n" + `- Guilds : ${bot.guilds.size}     \n- Users : ${membercount}     \`\`\`\n` + "📁 Usage\n" + "```diff\n" + `- Ram Usage : ${ramu} mb    \`\`\`\n` + "⏰ Uptime\n```diff\n" + `- Uptime : ${uptime}      \`\`\``)
       .setThumbnail(bot.user.displayAvatarURL)
   
-      if (message.content === ">>stats") message.channel.send(embed)
+      if (message.content === ".stats") message.channel.send(embed)
   
 
 
@@ -28,10 +28,10 @@ if (!["507408804145528832"].includes(message.author.id)) return
   .setDescription(servers)
   .setTitle("Current Servers")
   .setColor(0x36393f)
-  if (message.content === ">>stats servers") message.channel.send(serverss)
-  if (message.content === ">>stats Servers") message.channel.send(serverss)
-  if (message.content === ">>stats server") message.channel.send(serverss)
-  if (message.content === ">>stats Server") message.channel.send(serverss)
+  if (message.content === ".stats servers") message.channel.send(serverss)
+  if (message.content === ".stats Servers") message.channel.send(serverss)
+  if (message.content === ".stats server") message.channel.send(serverss)
+  if (message.content === ".stats Server") message.channel.send(serverss)
   }
   
   exports.help = {

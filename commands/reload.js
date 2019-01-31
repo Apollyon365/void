@@ -11,19 +11,19 @@ message.delete()
    .setFooter(`${message.author.username}`, message.author.displayAvatarURL)
   let nocommand = new Discord.RichEmbed();
  nocommand.setColor(0x36393f)
- nocommand.setDescription("Provide a command name to reload.");
+ nocommand.setDescription("🚫 Provide a command name to reload.");
  //----------------------
  let nocomm = new Discord.RichEmbed();
  nocomm.setColor(0x36393f)
- nocomm.setDescription("Command doesn\'t exist");
+ nocomm.setDescription("🚫 Command doesn\'t exist");
 
   
-  if (!["507408804145528832"].includes(message.author.id)) return message.channel.send(NotDev);
-		if (!args || args.size < 1) return message.channel.send(nocommand);
+  if (!["507408804145528832"].includes(message.author.id)) return message.channel.send("🚫 Devs Can Only Use this Command.");
+		if (!args || args.size < 1) return message.channel.send("🚫 Provide a command name to reload.");
 		const commandName = args[0];
 		// Check if the command exists and is valid
 		if (!bot.commands.has(commandName)) {
-			return message.channel.send(nocomm);
+			return message.channel.send("🚫 Command doesn\'t exist");
 		}
 
  //----------------------
@@ -37,7 +37,7 @@ message.delete()
 		bot.commands.delete(commandName);
 		const props = require(`./${commandName}.js`);
 		bot.commands.set(commandName, props);
-		message.channel.send(reload)
+		message.channel.send(`\*\*Reloaded the command: \`${commandName}.js\` 🔄\*\*`)
 		//----------------------
 
  //----------------------

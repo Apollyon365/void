@@ -42,16 +42,17 @@ module.exports.run = async (bot, message, args, ops) => {
   let volume = "`>>volume` `<1-200>` (Changes the volume from 1-200)"
   let search = "`>>search` `<search>` (Searches what you want in youtube for Abyss to play)"
   
-  var prefix = '>>';
+  var prefix = '.';
 let fetched = await db.fetch(`prefix_${message.guild.id}`);
-if (fetched === null) prefix = '>>';
+if (fetched === null) prefix = '.';
 else prefix = fetched;
   let p = `${fetched || prefix}`
   
+ 
   let help = new Discord.RichEmbed()
   .setTitle("Help Menu")
  .setDescription(`View the Commands [here](https://sites.google.com/view/voidbot/commands)\n The Prefix for ${message.guild.name} is ${fetched || prefix}`)
-  .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n❔ [Support Server](https://discord.gg/7xuEzbt)\n<a:discordblob:532794373104992273> [Void's Website](https://sites.google.com/view/voidbot/home?authuser=0)")
+  .addField("Links", "🔗 [Invite Me](https://discordapp.com/oauth2/authorize?client_id=508122813299818511&scope=bot&permissions=2146958847)\n❔ [Support Server](https://discord.gg/7xuEzbt)\n✌ [Void's Website](https://sites.google.com/view/voidbot/home?authuser=0)")
   .setColor(0x36393f)
 message.channel.send(help)
 }

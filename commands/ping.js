@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, ops) => {
   let grey = ops.grey
   let pong = new Discord.RichEmbed()
  
-  .setDescription("🏓 Pong! \n ```diff\n" + `- - - ${Math.round(bot.ping)}ms` + `\n- - -\`\`\``)
+  .setDescription("🏓 Pong! \n ```diff\n" + `${Math.round(bot.ping)}ms` + `\`\`\``)
   .setColor(grey)
   
    message.channel.send(pong);        

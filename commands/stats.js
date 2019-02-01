@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 exports.run = async (bot, message) => {
-  message.delete()
+  
 let guildsize = `${bot.guilds.size}`
 let membercount = `${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`
 let uptime = `${Math.floor(bot.uptime / 86400000)}d ${Math.floor(bot.uptime / 3600000) % 24}h ${Math.floor(bot.uptime / 60000) % 60}m ${Math.floor(bot.uptime / 1000) % 60}s`

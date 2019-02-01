@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const db = require('quick.db')
 
 module.exports.run = async (bot, message, args, ops) => {
-  message.delete()
+ 
   //General
   let help1 = "`>>help` (Shows you all of the commands)"
   let ping = "`>>ping` (Shows how fast the bot responds in ms)"

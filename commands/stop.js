@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const ytdl = require('ytdl-core');
 
 module.exports.run = async (bot, message, args, ops) => {
-  message.delete()
+
  //----------------------
     let novoice = new Discord.RichEmbed();
     novoice.setColor(0x36393f)

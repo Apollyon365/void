@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const db = require('quick.db')
 
 module.exports.run = async (bot, message, args) => {
-message.delete()
+
     let noperm = new Discord.RichEmbed()
 .setDescription("🚫 Missing Permissions: ``ADMINISTRATOR``")
 .setColor(0x36393f);

@@ -2,7 +2,7 @@ const search = require('yt-search');
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args, ops) => {
-  message.delete()
+
 let error = new Discord.RichEmbed()
     .setColor(0x36393f)
     .setDescription('🚫 Something went wrong.');

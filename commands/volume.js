@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const DBL = require('dblapi.js')
 module.exports.run = async (bot, message, args, ops) => {
-message.delete()
+
 
   let fetched = ops.active.get(message.guild.id);
 let error = new Discord.RichEmbed()

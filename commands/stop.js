@@ -37,7 +37,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
   message.guild.me.voiceChannel.leave();
 
-  message.delete();
+ 
 
   
 

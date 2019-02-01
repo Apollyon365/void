@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args, ops) => {
-  message.delete()
+ 
 let donate = new Discord.RichEmbed()
     .setColor(0x36393f)
     .setTitle("Donation")

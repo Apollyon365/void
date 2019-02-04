@@ -30,17 +30,17 @@ module.exports.run = async (bot, message, args, ops) => {
     needtext.setDescription("🚫 You need to supply a text.");
   
   
-  let messages = args.join(" ")
-  let messages2 = args.slice(1).join(" ")
+  let messages2 = args.join(" ")
+  let messages = args.slice(1).join(" ")
    if(args[0] == "embed") {
         if (!messages) return message.channel.send("🚫 You need to supply a text.")
-       message.channel.send(messages)
+       message.channel.send(messages2)
        return;
    }
   if (!messages2) return message.channel.send("🚫 You need to supply a text.")
         
     
-     message.channel.send(messages2);
+     message.channel.send(messages1);
 
 
 

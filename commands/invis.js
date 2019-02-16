@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args, ops) => {
   let messages2 = args.slice(1).join(" ")
    if(args[0] == "embed") {
         if (!messages2) return message.channel.send("🚫 You need to supply a text.")
-        let invis = new Discord.RichEmbed();
+        let invis = new Discord.RichEmbed()
     .setColor(0x36393f)
     .setDescription(messages2)
      message.channel.send(invis);
